@@ -57,8 +57,14 @@ public:
     bool readLine(line l);
 private:
 
-    point makePoint(std::string l);
+    point makePoint(std::string line);
     bool addPoint(line l);
+
+    vec makeVector(std::string l);
+
+    dirVec makeDirVec(std::string line);
+
+    int count(std::string l, std::string regex);
 
     std::map <std::string, point> points;
     std::map <std::string, vec> vecs;
