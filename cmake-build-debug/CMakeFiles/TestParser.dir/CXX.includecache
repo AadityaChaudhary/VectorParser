@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adi/development/cs/clion-projects/VectorParser/parser.h
+map
+-
+
+/home/adi/development/cs/clion-projects/VectorParser/test.cpp
+iostream
+-
+parser.h
+/home/adi/development/cs/clion-projects/VectorParser/parser.h
+

@@ -57,6 +57,8 @@ public:
     bool readLine(line l);
 private:
 
+    point makePoint(std::string l);
+    bool addPoint(line l);
 
     std::map <std::string, point> points;
     std::map <std::string, vec> vecs;

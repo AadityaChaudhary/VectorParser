@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/adi/development/cs/clion-projects/VectorParser/cmake-bu
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/adi/apps/clion-2019.1.4/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/adi/apps/clion-2019.1.4/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -122,6 +122,19 @@ VectorParser: cmake_check_build_system
 VectorParser/fast:
 	$(MAKE) -f CMakeFiles/VectorParser.dir/build.make CMakeFiles/VectorParser.dir/build
 .PHONY : VectorParser/fast
+
+#=============================================================================
+# Target rules for targets named TestParser
+
+# Build rule for target.
+TestParser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TestParser
+.PHONY : TestParser
+
+# fast build rule for target.
+TestParser/fast:
+	$(MAKE) -f CMakeFiles/TestParser.dir/build.make CMakeFiles/TestParser.dir/build
+.PHONY : TestParser/fast
 
 main.o: main.cpp.o
 
@@ -177,21 +190,52 @@ parser.cpp.s:
 	$(MAKE) -f CMakeFiles/VectorParser.dir/build.make CMakeFiles/VectorParser.dir/parser.cpp.s
 .PHONY : parser.cpp.s
 
+test.o: test.cpp.o
+
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) -f CMakeFiles/TestParser.dir/build.make CMakeFiles/TestParser.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) -f CMakeFiles/TestParser.dir/build.make CMakeFiles/TestParser.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) -f CMakeFiles/TestParser.dir/build.make CMakeFiles/TestParser.dir/test.cpp.s
+.PHONY : test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... VectorParser"
-	@echo "... edit_cache"
+	@echo "... TestParser"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... parser.o"
 	@echo "... parser.i"
 	@echo "... parser.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 
