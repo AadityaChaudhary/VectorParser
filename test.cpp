@@ -8,10 +8,11 @@ int count(std::string l,std::string regex);
 
 
 int main() {
-    std::string l = "v{dv{1,3,4},pt{8,2,5}}";
+    std::string l = "v{pt{8,2,5},pt{1,3,4}}";
     parser p;
     vec v = p.makeVector(l);
     //std::cout << v.dir.y << std::endl;
+    v.printInfo();
 
 }
 

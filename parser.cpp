@@ -46,17 +46,19 @@ bool parser::readLine(line l) {
 
 point parser::makePoint(std::string line)
 {
+   // std::cout << line << std::endl;
     line = line.substr(line.find('{') + 1); //line now is ####,#####,####}
     line = line.substr(0,line.length()- 1);
-    std::cout << line << std::endl;
+
+  //  std::cout << line << std::endl;
     double x = std::stod(line.substr(0,line.find(',')));
-    std::cout << x << std::endl;
+    //std::cout << x << std::endl;
     line = line.substr(line.find(',') + 1);
     double y = std::stod(line.substr(0, line.find(',')));
-    std::cout << y << std::endl;
+    //std::cout << y << std::endl;
     line = line.substr(line.find(',') + 1);
     double z = std::stod(line);
-    std::cout << z << std::endl;
+   // std::cout << z << std::endl;
 
     return {x,y,z};
 
@@ -75,6 +77,7 @@ vec parser::makeVector(std::string l) {
     std::string line = l;
     line = line.substr(line.find("v{") + 2); //line now is ####,#####,####}
     line = line.substr(0,line.length()- 1);
+    std::cout << line << std::endl; 
 
     if(nPoints == 2)
     {
@@ -91,14 +94,18 @@ vec parser::makeVector(std::string l) {
         point b;
         if(line.find(",pt") != std::string::npos)
         {
-            a = makeDirVec(l.substr(0,l.find(",p")));
-            b = makePoint(l.substr(l.find("p{")));
+            std::cout << line << std::endl; 
+            a = makeDirVec(line.substr(0,line.find(",p")));
+         //   std::cout << line << std::endl;
+          //  std::cout << "code made it here" << std::endl;
+           // std::cout <<line.substr(line.find("pt{")) << std::endl;
+            b = makePoint(line.substr(line.find("pt{")));
             return {a,b};
         }
         else if(line.find(",dv") != std::string::npos)
         {
-            a = makeDirVec(l.substr(l.find("dv")));
-            b = makePoint(l.substr(l.find("p")));
+            a = makeDirVec(line.substr(line.find("dv")));
+            b = makePoint(line.substr(0,line.find(",dv")));
             return {a,b};
         }
 
@@ -134,10 +141,10 @@ dirVec parser::makeDirVec(std::string line) {
 
     //std::cout << "code made it here" << std::endl;
    // std::cout << line << std::endl;
-    line = line.substr(line.find('dv{') + 4); //line now is ####,#####,####}
+    line = line.substr(line.find('{') + 1); //line now is ####,#####,####}
     //std::cout << line << std::endl;
     line = line.substr(0,line.length()- 1);
-    //std::cout << line << std::endl;
+   // std::cout << line << std::endl;
     double x = std::stod(line.substr(0,line.find(',')));
    // std::cout << x << std::endl;
     line = line.substr(line.find(',') + 1);
@@ -148,4 +155,17 @@ dirVec parser::makeDirVec(std::string line) {
   //  std::cout << z << std::endl;
 
     return {x,y,z};
+}
+
+void dirVec::printInfo() {
+    std::cout << "{" << x << ", " << y << ", " << z << "}" << std::endl;
+}
+void point::printInfo() {
+    std::cout << "{" << x << ", " << y << ", " << z << "}" << std::endl;
+}
+void vec::printInfo() {
+   std::cout << "Center: ";
+   center.printInfo();
+   std::cout << "DirVec: ";
+   dir.printInfo();
 }

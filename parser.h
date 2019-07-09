@@ -10,6 +10,9 @@
 struct dirVec{
     dirVec(double x, double y, double z);
     dirVec() = default;
+
+    void printInfo();
+
     double x;
     double y;
     double z;
@@ -17,7 +20,10 @@ struct dirVec{
 struct point{
     point(double x, double y, double z);
     point() = default;
+
     dirVec minus(point b);
+    void printInfo();
+
     double x;
     double y;
     double z;
@@ -28,6 +34,8 @@ struct vec{
     vec(point a, point b);
     vec(double x, double y, double z);
     vec(dirVec dirP, point a);
+
+    void printInfo();
 
     point center;
     dirVec dir;
