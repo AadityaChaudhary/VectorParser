@@ -82,8 +82,8 @@ vec parser::makeVector(std::string l) {
     if(nPoints == 2)
     {
         //this is for the case where a vector is created using two points. the direction vector is calculated
-        point a = makePoint(line.substr(0, line.find(",point")));
-        point b = makePoint(line.substr(line.find(",point{")));
+        point a = makePoint(line.substr(0, line.find(",pt")));
+        point b = makePoint(line.substr(line.find(",pt{")));
         return {a,b};
     }
     else if( nPoints == 1 && nDV == 1)
