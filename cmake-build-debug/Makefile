@@ -170,6 +170,7 @@ parser.o: parser.cpp.o
 # target to build an object file
 parser.cpp.o:
 	$(MAKE) -f CMakeFiles/VectorParser.dir/build.make CMakeFiles/VectorParser.dir/parser.cpp.o
+	$(MAKE) -f CMakeFiles/TestParser.dir/build.make CMakeFiles/TestParser.dir/parser.cpp.o
 .PHONY : parser.cpp.o
 
 parser.i: parser.cpp.i
@@ -179,6 +180,7 @@ parser.i: parser.cpp.i
 # target to preprocess a source file
 parser.cpp.i:
 	$(MAKE) -f CMakeFiles/VectorParser.dir/build.make CMakeFiles/VectorParser.dir/parser.cpp.i
+	$(MAKE) -f CMakeFiles/TestParser.dir/build.make CMakeFiles/TestParser.dir/parser.cpp.i
 .PHONY : parser.cpp.i
 
 parser.s: parser.cpp.s
@@ -188,6 +190,7 @@ parser.s: parser.cpp.s
 # target to generate assembly for a file
 parser.cpp.s:
 	$(MAKE) -f CMakeFiles/VectorParser.dir/build.make CMakeFiles/VectorParser.dir/parser.cpp.s
+	$(MAKE) -f CMakeFiles/TestParser.dir/build.make CMakeFiles/TestParser.dir/parser.cpp.s
 .PHONY : parser.cpp.s
 
 test.o: test.cpp.o

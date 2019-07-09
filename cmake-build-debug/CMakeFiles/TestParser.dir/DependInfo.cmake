@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/adi/development/cs/clion-projects/VectorParser/parser.cpp" "/home/adi/development/cs/clion-projects/VectorParser/cmake-build-debug/CMakeFiles/TestParser.dir/parser.cpp.o"
   "/home/adi/development/cs/clion-projects/VectorParser/test.cpp" "/home/adi/development/cs/clion-projects/VectorParser/cmake-build-debug/CMakeFiles/TestParser.dir/test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

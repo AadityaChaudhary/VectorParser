@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/TestParser.dir/test.cpp.o  -o TestParser 
+/usr/bin/c++  -g   CMakeFiles/TestParser.dir/test.cpp.o CMakeFiles/TestParser.dir/parser.cpp.o  -o TestParser 

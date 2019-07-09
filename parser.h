@@ -55,7 +55,7 @@ struct line{
 class parser {
 public:
     bool readLine(line l);
-private:
+
 
     point makePoint(std::string line);
     bool addPoint(line l);

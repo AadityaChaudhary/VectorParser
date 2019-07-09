@@ -5,4 +5,4 @@ project(TestParser)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(VectorParser main.cpp parser.cpp parser.h)
-add_executable(TestParser test.cpp)
+add_executable(TestParser test.cpp parser.cpp parser.h)

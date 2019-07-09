@@ -8,19 +8,11 @@ int count(std::string l,std::string regex);
 
 
 int main() {
-    std::string l = "dv{x,y,z},point{x,y,z}";
-    if(l.find(",d") != std::string::npos)
-    {
+    std::string l = "v{dv{1,3,4},pt{8,2,5}}";
+    parser p;
+    vec v = p.makeVector(l);
+    //std::cout << v.dir.y << std::endl;
 
-    }
-    else if(l.find(",p") != std::string::npos)
-    {
-
-    }
-    else
-    {
-
-    }
 }
 
 int count(std::string l, std::string regex) {

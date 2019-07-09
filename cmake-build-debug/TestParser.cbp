@@ -135,9 +135,11 @@
 		</Unit>
 		<Unit filename="/home/adi/development/cs/clion-projects/VectorParser/parser.cpp">
 			<Option target="VectorParser"/>
+			<Option target="TestParser"/>
 		</Unit>
 		<Unit filename="/home/adi/development/cs/clion-projects/VectorParser/parser.h">
 			<Option target="VectorParser"/>
+			<Option target="TestParser"/>
 		</Unit>
 		<Unit filename="/home/adi/development/cs/clion-projects/VectorParser/test.cpp">
 			<Option target="TestParser"/>
