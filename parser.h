@@ -7,9 +7,9 @@
 
 #include <map>
 
-struct DirVec{
-    DirVec(double x, double y, double z);
-    DirVec() = default;
+struct dirVec{
+    dirVec(double x, double y, double z);
+    dirVec() = default;
 
     void printInfo();
 
@@ -21,7 +21,7 @@ struct point{
     point(double x, double y, double z);
     point() = default;
 
-    DirVec minus(point b);
+    dirVec minus(point b);
     void printInfo();
 
     double x;
@@ -33,12 +33,12 @@ struct point{
 struct vec{
     vec(point a, point b);
     vec(double x, double y, double z);
-    vec(DirVec dirP, point a);
+    vec(dirVec dirP, point a);
 
     void printInfo();
 
     point center;
-    DirVec dir;
+    dirVec dir;
 
 
 };
@@ -66,16 +66,22 @@ public:
 
 
     point makePoint(std::string line);
-    bool addPoint(line l);
+    void addPoint(std::string l);
 
     vec makeVector(std::string l);
+    void addVector(std::string line);
 
-    DirVec makeDirVec(std::string line);
+    dirVec makeDirVec(std::string line);
 
     int count(std::string l, std::string regex);
+    void error(std::string errMsg);
+
+    int currentLineNum;
+    std::string currentLineVal;
+    bool err = false;
 
     std::map <std::string, point> points;
-    std::map <std::string, DirVec> dirVecs;
+    std::map <std::string, dirVec> dirVecs;
     std::map <std::string, vec> vecs;
     std::map <std::string, plane> planes;
 

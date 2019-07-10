@@ -5,10 +5,10 @@
 #include <iostream>
 #include "parser.h"
 
-DirVec::DirVec(double x, double y, double z) : x(x), y(y), z(z) {}
+dirVec::dirVec(double x, double y, double z) : x(x), y(y), z(z) {}
 
 point::point(double x, double y, double z) : x(x), y(y), z(z) {}
-DirVec point::minus(point b)
+dirVec point::minus(point b)
 {
     return {b.x-x, b.y - y, b.z - z};
 }
@@ -18,31 +18,13 @@ vec::vec(point a, point b)
     center = a;
     dir = a.minus(b);
 }
-vec::vec(DirVec dirP, point a)
+vec::vec(dirVec dirP, point a)
 {
     dir = dirP;
     center = a;
 }
 
 line::line(int lineNum, std::string lineVal) : lineNum(lineNum), lineVal(lineVal) {}
-
-bool parser::readLine(line l) {
-
-    std::cout << "parsing line number " << l.lineNum << std::endl;
-    std::string line = l.lineVal;
-    if(line.find("=>") != std::string::npos)
-    {
-        if(line.find("point{") != std::string::npos)
-        {
-            addPoint(l);
-            return true;
-        }
-    }
-    else{
-
-    }
-
-}
 
 point parser::makePoint(std::string line)
 {
@@ -70,9 +52,9 @@ point parser::makePoint(std::string line)
 
 }
 
-bool parser::addPoint(line l) {
-    std::string name = l.lineVal.substr(0, l.lineVal.find("=>"));
-    points[name] = makePoint(l.lineVal);
+void parser::addPoint(std::string l) {
+    std::string name = l.substr(0, l.find("=>"));
+    points[name] = makePoint(l);
 }
 
 vec parser::makeVector(std::string l) {
@@ -103,7 +85,7 @@ vec parser::makeVector(std::string l) {
     {
 
 
-        DirVec a;
+        dirVec a;
         point b;
         if(line.find(",pt") != std::string::npos)
         {
@@ -127,7 +109,7 @@ vec parser::makeVector(std::string l) {
     else if(nDV == 1 && nPoints == 0)
     {
         //case where only a dir vector is given, so the origin is assumed to be the point
-        DirVec a = makeDirVec(line);
+        dirVec a = makeDirVec(line);
         point b = point(0,0,0);
         return {a,b};
     }
@@ -147,7 +129,7 @@ int parser::count(std::string l, std::string regex) {
     return x;
 }
 
-DirVec parser::makeDirVec(std::string line) {
+dirVec parser::makeDirVec(std::string line) {
 
     //std::cout << "code made it here" << std::endl;
    // std::cout << line << std::endl;
@@ -175,7 +157,7 @@ DirVec parser::makeDirVec(std::string line) {
     return {x,y,z};
 }
 
-void DirVec::printInfo() {
+void dirVec::printInfo() {
     std::cout << "{" << x << ", " << y << ", " << z << "}" << std::endl;
 }
 void point::printInfo() {
@@ -184,6 +166,20 @@ void point::printInfo() {
 void vec::printInfo() {
    std::cout << "Center: ";
    center.printInfo();
-   std::cout << "DirVec: ";
+   std::cout << "dirVec: ";
    dir.printInfo();
+}
+void parser::addVector(std::string l) {
+    std::string name = l.substr(0, l.find("=>"));
+    vecs[name] = makeVector(l);
+}
+void parser::error(std::string errMsg) {
+    std::cout << "error on line " << currentLineNum << std::endl;
+
+    std::cout << "line contents: " << std::endl;
+    std::cout << currentLineVal << std::endl;
+
+    std::cout << "Error Message: " << std::endl;
+    std::cout << errMsg << std::endl;
+
 }
