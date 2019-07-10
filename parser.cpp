@@ -5,10 +5,10 @@
 #include <iostream>
 #include "parser.h"
 
-dirVec::dirVec(double x, double y, double z) : x(x), y(y), z(z) {}
+DirVec::DirVec(double x, double y, double z) : x(x), y(y), z(z) {}
 
 point::point(double x, double y, double z) : x(x), y(y), z(z) {}
-dirVec point::minus(point b)
+DirVec point::minus(point b)
 {
     return {b.x-x, b.y - y, b.z - z};
 }
@@ -18,7 +18,7 @@ vec::vec(point a, point b)
     center = a;
     dir = a.minus(b);
 }
-vec::vec(dirVec dirP, point a)
+vec::vec(DirVec dirP, point a)
 {
     dir = dirP;
     center = a;
@@ -49,7 +49,13 @@ point parser::makePoint(std::string line)
    // std::cout << line << std::endl;
     line = line.substr(line.find('{') + 1); //line now is ####,#####,####}
     line = line.substr(0,line.length()- 1);
-
+    if(line.find(',') != std::string::npos)
+    {
+        if(points.count(line) > 0)
+        {
+            return points[line];
+        }
+    }
   //  std::cout << line << std::endl;
     double x = std::stod(line.substr(0,line.find(',')));
     //std::cout << x << std::endl;
@@ -72,12 +78,19 @@ bool parser::addPoint(line l) {
 vec parser::makeVector(std::string l) {
     int nPoints = count(l,"pt{");
     int nDV = count(l,"dv{");
-    std::cout << nPoints << " --- " << nDV << std::endl;
+    
 
     std::string line = l;
     line = line.substr(line.find("v{") + 2); //line now is ####,#####,####}
     line = line.substr(0,line.length()- 1);
-    std::cout << line << std::endl; 
+    if(line.find(',') != std::string::npos)
+    {
+        if(vecs.count(line) > 0)
+        {
+            return vecs[line];
+        }
+    }
+
 
     if(nPoints == 2)
     {
@@ -88,17 +101,14 @@ vec parser::makeVector(std::string l) {
     }
     else if( nPoints == 1 && nDV == 1)
     {
-        std::cout << "one and one" << std::endl;
-        //this is for the case where a dirvector and point is given.
-        dirVec a;
+
+
+        DirVec a;
         point b;
         if(line.find(",pt") != std::string::npos)
         {
-            std::cout << line << std::endl; 
+
             a = makeDirVec(line.substr(0,line.find(",p")));
-         //   std::cout << line << std::endl;
-          //  std::cout << "code made it here" << std::endl;
-           // std::cout <<line.substr(line.find("pt{")) << std::endl;
             b = makePoint(line.substr(line.find("pt{")));
             return {a,b};
         }
@@ -117,7 +127,7 @@ vec parser::makeVector(std::string l) {
     else if(nDV == 1 && nPoints == 0)
     {
         //case where only a dir vector is given, so the origin is assumed to be the point
-        dirVec a = makeDirVec(line);
+        DirVec a = makeDirVec(line);
         point b = point(0,0,0);
         return {a,b};
     }
@@ -137,13 +147,21 @@ int parser::count(std::string l, std::string regex) {
     return x;
 }
 
-dirVec parser::makeDirVec(std::string line) {
+DirVec parser::makeDirVec(std::string line) {
 
     //std::cout << "code made it here" << std::endl;
    // std::cout << line << std::endl;
     line = line.substr(line.find('{') + 1); //line now is ####,#####,####}
     //std::cout << line << std::endl;
     line = line.substr(0,line.length()- 1);
+
+    if(line.find(',') != std::string::npos)
+    {
+        if(dirVecs.count(line) > 0)
+        {
+            return dirVecs[line];
+        }
+    }
    // std::cout << line << std::endl;
     double x = std::stod(line.substr(0,line.find(',')));
    // std::cout << x << std::endl;
@@ -157,7 +175,7 @@ dirVec parser::makeDirVec(std::string line) {
     return {x,y,z};
 }
 
-void dirVec::printInfo() {
+void DirVec::printInfo() {
     std::cout << "{" << x << ", " << y << ", " << z << "}" << std::endl;
 }
 void point::printInfo() {

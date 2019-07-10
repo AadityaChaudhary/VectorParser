@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="TestParser" targetName="TestParser" />
       <config projectName="TestParser" targetName="VectorParser" />
+      <config projectName="TestParser" targetName="TestParser" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -13,7 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="383f2412-0924-4a19-b0f5-46b37895389c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TestParser.dir/parser.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TestParser.dir/parser.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/TestParser" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TestParser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/parser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/parser.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parser.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+            <state relative-caret-position="189">
+              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -49,17 +53,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parser.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="85" column="54" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
+            <state relative-caret-position="356">
+              <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
               <folding>
                 <element signature="e#38#57#0" expanded="true" />
                 <element signature="e#212#282#0" />
                 <element signature="e#284#352#0" />
                 <element signature="e#353#419#0" />
-                <element signature="e#1400#1540#0" />
-                <element signature="e#3039#3597#0" />
-                <element signature="e#4323#4356#0" />
-                <element signature="e#4530#4560#0" />
+                <element signature="e#842#1445#0" />
+                <element signature="e#1447#1587#0" />
+                <element signature="e#1589#2989#0" />
+                <element signature="e#2991#3193#0" />
+                <element signature="e#3195#3890#0" />
+                <element signature="e#3994#4094#0" />
               </folding>
             </state>
           </provider>
@@ -72,7 +78,6 @@
               <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding>
                 <element signature="e#37#56#0" expanded="true" />
-                <element signature="e#323#505#0" />
               </folding>
             </state>
           </provider>
@@ -89,8 +94,8 @@
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/input.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/parser.h" />
         <option value="$PROJECT_DIR$/test.cpp" />
+        <option value="$PROJECT_DIR$/parser.h" />
         <option value="$PROJECT_DIR$/parser.cpp" />
       </list>
     </option>
@@ -168,23 +173,24 @@
       <workItem from="1562470018093" duration="3269000" />
       <workItem from="1562554815937" duration="8899000" />
       <workItem from="1562615863517" duration="906000" />
-      <workItem from="1562682108133" duration="3180000" />
+      <workItem from="1562682108133" duration="4167000" />
+      <workItem from="1562715214859" duration="2546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19559000" />
+    <option name="totallyTimeSpent" value="23092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1596" y="72" width="1928" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.185836" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18743344" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32944915" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32944915" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993644" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -215,6 +221,16 @@
     <entry file="file://$PROJECT_DIR$/input.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="e#37#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -224,35 +240,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parser.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <element signature="e#37#56#0" expanded="true" />
-            <element signature="e#323#505#0" />
-          </folding>
+        <state relative-caret-position="189">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parser.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="85" column="54" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
+        <state relative-caret-position="356">
+          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
           <folding>
             <element signature="e#38#57#0" expanded="true" />
             <element signature="e#212#282#0" />
             <element signature="e#284#352#0" />
             <element signature="e#353#419#0" />
-            <element signature="e#1400#1540#0" />
-            <element signature="e#3039#3597#0" />
-            <element signature="e#4323#4356#0" />
-            <element signature="e#4530#4560#0" />
+            <element signature="e#842#1445#0" />
+            <element signature="e#1447#1587#0" />
+            <element signature="e#1589#2989#0" />
+            <element signature="e#2991#3193#0" />
+            <element signature="e#3195#3890#0" />
+            <element signature="e#3994#4094#0" />
           </folding>
         </state>
       </provider>
