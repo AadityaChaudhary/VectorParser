@@ -2,17 +2,15 @@
 // Created by adi on 07/07/19.
 //
 #include <iostream>
-#include "parser.h"
+#include <vector>
+//#include "parser.h"
 
 int count(std::string l,std::string regex);
-
+void testVector(std::string l);
 
 int main() {
     std::string l = "v{pt{8,2,5},pt{1,3,4}}";
-    parser p;
-    vec v = p.makeVector(l);
-    //std::cout << v.dir.y << std::endl;
-    v.printInfo();
+    testVector(l);
 
 }
 
@@ -24,3 +22,57 @@ for(x = 0; l.find(regex) != std::string::npos; x++)
     }
 return x;
 }
+
+void testVector(std::string l)
+{
+    std::vector<std::string> args;
+    l = l.substr(l.find("v{") + 2); //line now is ####,#####,####}
+    l = l.substr(0,l.length()- 1);
+
+    int beginArg = 0;
+    bool ignore = false; //for ignoring parameters in pt and dv definitions
+
+    for(int x = 0; x < l.length(); x++)
+    {
+       // std::cout << x << " : " << beginArg << std::endl;
+        std::string current = l.substr(x,1);
+        if(current.compare("{") == 0)
+        {
+            ignore = true;
+        }
+        else if(current.compare("}") == 0)
+        {
+            ignore = false;
+        }
+        else if(current.compare(",") == 0 && !ignore)
+        {
+            args.push_back(l.substr(beginArg, x - beginArg));
+            beginArg = x;
+            //std::cout << "special" << x << " : " << beginArg << std::endl;
+
+        }
+        else
+        {
+            //basically any other character, we don't really care about them.
+        }
+        if(x == l.length() - 1)
+        {
+            args.push_back(l.substr(beginArg + 1,x - beginArg + 1));
+            //std::cout << x << " : " << beginArg << std::endl;
+        }
+    }
+    for(auto&& x: args)
+    {
+        std::cout << x << std::endl;
+    }
+    if(args.size() == 1)
+    {
+        //return {makeDirVec(args[0])};
+    }
+    else
+    {
+        
+    }
+
+}
+

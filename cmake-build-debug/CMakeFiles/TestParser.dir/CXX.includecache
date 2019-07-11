@@ -6,13 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/adi/development/cs/clion-projects/VectorParser/parser.cpp
+/home/adi/development/cs/clion-projects/VectorParser/test.cpp
 iostream
 -
-parser.h
-/home/adi/development/cs/clion-projects/VectorParser/parser.h
-
-/home/adi/development/cs/clion-projects/VectorParser/parser.h
-map
+vector
 -
 

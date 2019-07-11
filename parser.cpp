@@ -210,11 +210,22 @@ vec parser::makeVectorTest(std::string l) {
         {
             args.push_back(l.substr(beginArg, x - beginArg));
             beginArg = x;
+
+        }
+        else if(x == l.length() - 1)
+        {
+            args.push_back(l.substr(beginArg,x - beginArg));
         }
         else
         {
             //basically any other character, we don't really care about them.
         }
     }
-
+    for(auto&& x: args)
+    {
+        std::cout << x << std::endl;
+    }
+        point a{0,0,0};
+        dirVec b{0,0,0};
+        return {b,a};
 }

@@ -32,8 +32,9 @@ struct point{
 
 struct vec{
     vec(point a, point b);
-    vec(double x, double y, double z);
+    //vec(double x, double y, double z);
     vec(dirVec dirP, point a);
+    vec() = default;
 
     void printInfo();
 
