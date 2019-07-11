@@ -70,6 +70,7 @@ public:
 
     vec makeVector(std::string l);
     void addVector(std::string line);
+    vec makeVectorTest(std::string l);
 
     dirVec makeDirVec(std::string line);
 

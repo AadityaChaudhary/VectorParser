@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include "parser.h"
+#include <vector>
+
 
 dirVec::dirVec(double x, double y, double z) : x(x), y(y), z(z) {}
 
@@ -65,6 +67,8 @@ vec parser::makeVector(std::string l) {
     std::string line = l;
     line = line.substr(line.find("v{") + 2); //line now is ####,#####,####}
     line = line.substr(0,line.length()- 1);
+
+    //I'm not entirely sure what the point of this is , but I'll leave it in for now
     if(line.find(',') != std::string::npos)
     {
         if(vecs.count(line) > 0)
@@ -114,7 +118,7 @@ vec parser::makeVector(std::string l) {
         return {a,b};
     }
     else{
-        //error case
+        //assume that
     }
 
 }
@@ -181,5 +185,36 @@ void parser::error(std::string errMsg) {
 
     std::cout << "Error Message: " << std::endl;
     std::cout << errMsg << std::endl;
+
+}
+vec parser::makeVectorTest(std::string l) {
+    std::vector<std::string> args;
+    l = l.substr(l.find("v{") + 2); //line now is ####,#####,####}
+    l = l.substr(0,l.length()- 1);
+
+    int beginArg = 0;
+    bool ignore = false; //for ignoring parameters in pt and dv definitions
+
+    for(int x = 0; x < l.length(); x++)
+    {
+        std::string current = l.substr(x,1);
+        if(current.compare("{") == 0)
+        {
+            ignore = true;
+        }
+        else if(current.compare("}") == 0)
+        {
+            ignore = false;
+        }
+        else if(current.compare(",") == 0 && !ignore)
+        {
+            args.push_back(l.substr(beginArg, x - beginArg));
+            beginArg = x;
+        }
+        else
+        {
+            //basically any other character, we don't really care about them.
+        }
+    }
 
 }
