@@ -4,5 +4,6 @@
 CMakeFiles/TestParser.dir/parser.cpp.o: ../parser.cpp
 CMakeFiles/TestParser.dir/parser.cpp.o: ../parser.h
 
+CMakeFiles/TestParser.dir/test.cpp.o: ../parser.h
 CMakeFiles/TestParser.dir/test.cpp.o: ../test.cpp
 

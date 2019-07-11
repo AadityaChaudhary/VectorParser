@@ -3,17 +3,29 @@
 //
 #include <iostream>
 #include <vector>
-//#include "parser.h"
+#include "parser.h"
+
 
 int count(std::string l,std::string regex);
 void testVector(std::string l);
+point makePointT();
 
 int main() {
-    std::string l = "v{pt{8,2,5},pt{1,3,4}}";
-    testVector(l);
+
+    point* a;
+    if(true)
+    {
+        point ap = makePointT();
+        a = &ap;
+    }
+    a->printInfo();
+
 
 }
-
+point makePointT()
+{
+    return {1,0,0};
+}
 int count(std::string l, std::string regex) {
 int x;
 for(x = 0; l.find(regex) != std::string::npos; x++)
@@ -71,7 +83,10 @@ void testVector(std::string l)
     }
     else
     {
-        
+        for(auto& p : args)
+        {
+
+        }
     }
 
 }

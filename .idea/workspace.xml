@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="TestParser" targetName="TestParser" />
       <config projectName="TestParser" targetName="VectorParser" />
+      <config projectName="TestParser" targetName="TestParser" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -13,9 +13,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="383f2412-0924-4a19-b0f5-46b37895389c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TestParser.dir/parser.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/parser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/parser.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -34,7 +33,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parser.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
+            <state relative-caret-position="756">
               <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
             </state>
           </provider>
@@ -52,21 +51,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parser.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
+            <state relative-caret-position="587">
+              <caret line="246" selection-start-line="246" selection-end-line="246" />
               <folding>
                 <element signature="e#38#57#0" expanded="true" />
-                <element signature="e#212#282#0" />
-                <element signature="e#353#419#0" />
-                <element signature="e#507#1253#0" />
-                <element signature="e#1255#1378#0" />
-                <element signature="e#2922#3124#0" />
-                <element signature="e#3126#3968#0" />
-                <element signature="e#3970#4071#0" />
-                <element signature="e#4072#4172#0" />
-                <element signature="e#4173#4297#0" />
-                <element signature="e#4298#4421#0" />
-                <element signature="e#4422#4715#0" />
+                <element signature="e#1399#3026#0" />
+                <element signature="e#3028#3230#0" />
+                <element signature="e#3232#4074#0" />
+                <element signature="e#4076#4177#0" />
+                <element signature="e#4178#4278#0" />
+                <element signature="e#4279#4403#0" />
+                <element signature="e#4404#4527#0" />
+                <element signature="e#4528#4821#0" />
               </folding>
             </state>
           </provider>
@@ -75,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+            <state relative-caret-position="420">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding>
                 <element signature="e#37#56#0" expanded="true" />
               </folding>
@@ -95,8 +91,8 @@
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/input.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/parser.cpp" />
         <option value="$PROJECT_DIR$/parser.h" />
+        <option value="$PROJECT_DIR$/parser.cpp" />
         <option value="$PROJECT_DIR$/test.cpp" />
       </list>
     </option>
@@ -176,23 +172,23 @@
       <workItem from="1562615863517" duration="906000" />
       <workItem from="1562682108133" duration="4167000" />
       <workItem from="1562715214859" duration="5133000" />
-      <workItem from="1562837410722" duration="4974000" />
+      <workItem from="1562837410722" duration="5574000" />
+      <workItem from="1562876232394" duration="2744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30653000" />
+    <option name="totallyTimeSpent" value="33997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1596" y="72" width="1928" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18903089" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19062833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32944915" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32944915" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993644" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -223,13 +219,6 @@
     <entry file="file://$PROJECT_DIR$/input.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/8/bits/stl_vector.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -239,36 +228,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parser.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
+        <state relative-caret-position="756">
           <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parser.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
+        <state relative-caret-position="587">
+          <caret line="246" selection-start-line="246" selection-end-line="246" />
           <folding>
             <element signature="e#38#57#0" expanded="true" />
-            <element signature="e#212#282#0" />
-            <element signature="e#353#419#0" />
-            <element signature="e#507#1253#0" />
-            <element signature="e#1255#1378#0" />
-            <element signature="e#2922#3124#0" />
-            <element signature="e#3126#3968#0" />
-            <element signature="e#3970#4071#0" />
-            <element signature="e#4072#4172#0" />
-            <element signature="e#4173#4297#0" />
-            <element signature="e#4298#4421#0" />
-            <element signature="e#4422#4715#0" />
+            <element signature="e#1399#3026#0" />
+            <element signature="e#3028#3230#0" />
+            <element signature="e#3232#4074#0" />
+            <element signature="e#4076#4177#0" />
+            <element signature="e#4178#4278#0" />
+            <element signature="e#4279#4403#0" />
+            <element signature="e#4404#4527#0" />
+            <element signature="e#4528#4821#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+        <state relative-caret-position="420">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
           <folding>
             <element signature="e#37#56#0" expanded="true" />
           </folding>

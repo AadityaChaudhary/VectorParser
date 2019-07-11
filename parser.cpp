@@ -188,6 +188,7 @@ void parser::error(std::string errMsg) {
 
 }
 vec parser::makeVectorTest(std::string l) {
+
     std::vector<std::string> args;
     l = l.substr(l.find("v{") + 2); //line now is ####,#####,####}
     l = l.substr(0,l.length()- 1);
@@ -197,6 +198,7 @@ vec parser::makeVectorTest(std::string l) {
 
     for(int x = 0; x < l.length(); x++)
     {
+        // std::cout << x << " : " << beginArg << std::endl;
         std::string current = l.substr(x,1);
         if(current.compare("{") == 0)
         {
@@ -210,22 +212,50 @@ vec parser::makeVectorTest(std::string l) {
         {
             args.push_back(l.substr(beginArg, x - beginArg));
             beginArg = x;
+            //std::cout << "special" << x << " : " << beginArg << std::endl;
 
-        }
-        else if(x == l.length() - 1)
-        {
-            args.push_back(l.substr(beginArg,x - beginArg));
         }
         else
         {
             //basically any other character, we don't really care about them.
+        }
+        if(x == l.length() - 1)
+        {
+            args.push_back(l.substr(beginArg + 1,x - beginArg + 1));
+            //std::cout << x << " : " << beginArg << std::endl;
         }
     }
     for(auto&& x: args)
     {
         std::cout << x << std::endl;
     }
-        point a{0,0,0};
-        dirVec b{0,0,0};
-        return {b,a};
+    if(args.size() == 1)
+    {
+        //return {makeDirVec(args[0])};
+    }
+    else
+    {
+        point* a;
+        point* b;
+        dirVec* c;
+        for(auto& p : args) {
+            if (p.find("pt{") != std::string::npos || points.count(p))
+            {
+                //parameter is a point
+                if(a == NULL)
+                {
+
+                }
+            }
+            else if(p.find("dv{") == std::string::npos || dirVecs.count(p))
+            {
+                //parameter is a dirVec
+            }
+            else
+            {
+                //parameter is neither and is wrong ERROR
+            }
+        }
+    }
+
 }
