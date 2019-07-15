@@ -14,7 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="383f2412-0924-4a19-b0f5-46b37895389c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/parser.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/parser.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
     </list>
@@ -31,11 +30,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parser.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="79" column="73" selection-start-line="79" selection-start-column="73" selection-end-line="79" selection-end-column="73" />
+            <state relative-caret-position="1385">
+              <caret line="87" selection-start-line="87" selection-end-line="87" />
+              <folding>
+                <element signature="e#99#113#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,13 +51,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parser.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="261" column="79" selection-start-line="261" selection-start-column="79" selection-end-line="261" selection-end-column="79" />
+            <state relative-caret-position="293">
+              <caret line="248" column="13" lean-forward="true" selection-start-line="248" selection-start-column="13" selection-end-line="248" selection-end-column="13" />
               <folding>
                 <element signature="e#38#57#0" expanded="true" />
+                <element signature="e#231#301#0" />
+                <element signature="e#303#371#0" />
+                <element signature="e#372#438#0" />
+                <element signature="e#526#1272#0" />
+                <element signature="e#1274#1397#0" />
                 <element signature="e#1399#3026#0" />
                 <element signature="e#3028#3230#0" />
                 <element signature="e#3232#4074#0" />
@@ -64,7 +71,6 @@
                 <element signature="e#4279#4403#0" />
                 <element signature="e#4404#4527#0" />
                 <element signature="e#4528#4821#0" />
-                <element signature="e#6695#6782#0" />
               </folding>
             </state>
           </provider>
@@ -73,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="273">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#37#56#0" expanded="true" />
               </folding>
@@ -178,14 +184,16 @@
       <workItem from="1562876232394" duration="2744000" />
       <workItem from="1563166029060" duration="1286000" />
       <workItem from="1563204291093" duration="1633000" />
+      <workItem from="1563213418538" duration="256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36916000" />
+    <option name="totallyTimeSpent" value="37173000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1596" y="72" width="1928" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19488817" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -230,6 +238,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/parser.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1385">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="e#99#113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -239,8 +257,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="273">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#37#56#0" expanded="true" />
           </folding>
@@ -249,10 +267,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parser.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="261" column="79" selection-start-line="261" selection-start-column="79" selection-end-line="261" selection-end-column="79" />
+        <state relative-caret-position="293">
+          <caret line="248" column="13" lean-forward="true" selection-start-line="248" selection-start-column="13" selection-end-line="248" selection-end-column="13" />
           <folding>
             <element signature="e#38#57#0" expanded="true" />
+            <element signature="e#231#301#0" />
+            <element signature="e#303#371#0" />
+            <element signature="e#372#438#0" />
+            <element signature="e#526#1272#0" />
+            <element signature="e#1274#1397#0" />
             <element signature="e#1399#3026#0" />
             <element signature="e#3028#3230#0" />
             <element signature="e#3232#4074#0" />
@@ -261,15 +284,7 @@
             <element signature="e#4279#4403#0" />
             <element signature="e#4404#4527#0" />
             <element signature="e#4528#4821#0" />
-            <element signature="e#6695#6782#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parser.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="79" column="73" selection-start-line="79" selection-start-column="73" selection-end-line="79" selection-end-column="73" />
         </state>
       </provider>
     </entry>
