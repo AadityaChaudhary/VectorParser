@@ -259,3 +259,12 @@ vec parser::makeVectorTest(std::string l) {
     }
 
 }
+std::string parser::replace(std::string newS, std::string oldS, std::string p) {
+    std::string replace(std::string newS, std::string oldS, std::string p)
+    {
+        while(p.find(oldS) != std::string::npos)
+        {
+            p = p.substr(0,p.find(oldS)) + newS + p.substr(p.find(oldS) + 1);
+        }
+    }
+}

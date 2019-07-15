@@ -77,6 +77,7 @@ public:
 
     int count(std::string l, std::string regex);
     void error(std::string errMsg);
+    std::string replace(std::string newS,std::string oldS,std::string p);
 
     int currentLineNum;
     std::string currentLineVal;

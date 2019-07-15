@@ -9,19 +9,25 @@
 int count(std::string l,std::string regex);
 void testVector(std::string l);
 point makePointT();
+std::string replace(std::string newS, std::string oldS, std::string p);
 
 int main() {
 
-    point* a;
-    if(true)
-    {
-        point ap = makePointT();
-        a = &ap;
-    }
-    a->printInfo();
+//    point* a;
+//    if(true)
+//    {
+//        point ap = makePointT();
+//        a = &ap;
+//    }
+//    a->printInfo();
+
+std::string p = "vec => v{ 9 , 0, 9 }";
+p = replace(""," ", p);
+std::cout << p << std::endl;
 
 
 }
+
 point makePointT()
 {
     return {1,0,0};
