@@ -30,27 +30,38 @@ line::line(int lineNum, std::string lineVal) : lineNum(lineNum), lineVal(lineVal
 
 point parser::makePoint(std::string line)
 {
-   // std::cout << line << std::endl;
-    line = line.substr(line.find('{') + 1); //line now is ####,#####,####}
-    line = line.substr(0,line.length()- 1);
-    if(line.find(',') != std::string::npos)
+    if(line.find('{') == std::string::npos)
     {
         if(points.count(line) > 0)
         {
             return points[line];
         }
+        else
+        {
+            //error
+        }
     }
-  //  std::cout << line << std::endl;
-    double x = std::stod(line.substr(0,line.find(',')));
-    //std::cout << x << std::endl;
-    line = line.substr(line.find(',') + 1);
-    double y = std::stod(line.substr(0, line.find(',')));
-    //std::cout << y << std::endl;
-    line = line.substr(line.find(',') + 1);
-    double z = std::stod(line);
-   // std::cout << z << std::endl;
+    else
+    {
+        // std::cout << line << std::endl;
+        line = line.substr(line.find('{') + 1); //line now is ####,#####,####}
+        line = line.substr(0,line.length()- 1);
 
-    return {x,y,z};
+        //  std::cout << line << std::endl;
+        double x = std::stod(line.substr(0,line.find(',')));
+        //std::cout << x << std::endl;
+        line = line.substr(line.find(',') + 1);
+        double y = std::stod(line.substr(0, line.find(',')));
+        //std::cout << y << std::endl;
+        line = line.substr(line.find(',') + 1);
+        double z = std::stod(line);
+        // std::cout << z << std::endl;
+
+        return {x,y,z};
+    }
+
+
+
 
 }
 
@@ -135,30 +146,39 @@ int parser::count(std::string l, std::string regex) {
 
 dirVec parser::makeDirVec(std::string line) {
 
-    //std::cout << "code made it here" << std::endl;
-   // std::cout << line << std::endl;
-    line = line.substr(line.find('{') + 1); //line now is ####,#####,####}
-    //std::cout << line << std::endl;
-    line = line.substr(0,line.length()- 1);
-
-    if(line.find(',') != std::string::npos)
+    if(line.find('{') == std::string::npos)
     {
         if(dirVecs.count(line) > 0)
         {
             return dirVecs[line];
         }
+        else
+        {
+            //error
+        }
     }
-   // std::cout << line << std::endl;
-    double x = std::stod(line.substr(0,line.find(',')));
-   // std::cout << x << std::endl;
-    line = line.substr(line.find(',') + 1);
-    double y = std::stod(line.substr(0, line.find(',')));
-   // std::cout << y << std::endl;
-    line = line.substr(line.find(',') + 1);
-    double z = std::stod(line);
-  //  std::cout << z << std::endl;
+    else
+    {
+        //std::cout << "code made it here" << std::endl;
+        // std::cout << line << std::endl;
+        line = line.substr(line.find('{') + 1); //line now is ####,#####,####}
+        //std::cout << line << std::endl;
+        line = line.substr(0,line.length()- 1);
 
-    return {x,y,z};
+
+        // std::cout << line << std::endl;
+        double x = std::stod(line.substr(0,line.find(',')));
+        // std::cout << x << std::endl;
+        line = line.substr(line.find(',') + 1);
+        double y = std::stod(line.substr(0, line.find(',')));
+        // std::cout << y << std::endl;
+        line = line.substr(line.find(',') + 1);
+        double z = std::stod(line);
+        //  std::cout << z << std::endl;
+
+        return {x,y,z};
+    }
+
 }
 
 void dirVec::printInfo() {
