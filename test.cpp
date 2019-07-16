@@ -10,6 +10,7 @@ int count(std::string l,std::string regex);
 void testVector(std::string l);
 point makePointT();
 std::string replace(std::string newS, std::string oldS, std::string p);
+parser p;
 
 int main() {
 
@@ -21,9 +22,13 @@ int main() {
 //    }
 //    a->printInfo();
 
-std::string p = "vec => v{ 9 , 0, 9 }";
-p = replace(""," ", p);
-std::cout << p << std::endl;
+//std::string p = "vec => v{ 9 , 0, 9 }";
+//p = replace(""," ", p);
+//std::cout << p << std::endl;
+p.addPoint("yeet=>pt{9,8,7}");
+
+vec v = p.makeVectorTest("v{yeet,dv{0,1,8}}");
+v.printInfo();
 
 
 }

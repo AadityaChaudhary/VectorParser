@@ -70,69 +70,6 @@ void parser::addPoint(std::string l) {
     points[name] = makePoint(l);
 }
 
-vec parser::makeVector(std::string l) {
-    int nPoints = count(l,"pt{");
-    int nDV = count(l,"dv{");
-    
-
-    std::string line = l;
-    line = line.substr(line.find("v{") + 2); //line now is ####,#####,####}
-    line = line.substr(0,line.length()- 1);
-
-    //I'm not entirely sure what the point of this is , but I'll leave it in for now
-    if(line.find(',') != std::string::npos)
-    {
-        if(vecs.count(line) > 0)
-        {
-            return vecs[line];
-        }
-    }
-
-
-    if(nPoints == 2)
-    {
-        //this is for the case where a vector is created using two points. the direction vector is calculated
-        point a = makePoint(line.substr(0, line.find(",pt")));
-        point b = makePoint(line.substr(line.find(",pt{")));
-        return {a,b};
-    }
-    else if( nPoints == 1 && nDV == 1)
-    {
-
-
-        dirVec a;
-        point b;
-        if(line.find(",pt") != std::string::npos)
-        {
-
-            a = makeDirVec(line.substr(0,line.find(",p")));
-            b = makePoint(line.substr(line.find("pt{")));
-            return {a,b};
-        }
-        else if(line.find(",dv") != std::string::npos)
-        {
-            a = makeDirVec(line.substr(line.find("dv")));
-            b = makePoint(line.substr(0,line.find(",dv")));
-            return {a,b};
-        }
-
-        else
-        {
-            //  error case
-        }
-    }
-    else if(nDV == 1 && nPoints == 0)
-    {
-        //case where only a dir vector is given, so the origin is assumed to be the point
-        dirVec a = makeDirVec(line);
-        point b = point(0,0,0);
-        return {a,b};
-    }
-    else{
-        //assume that
-    }
-
-}
 
 int parser::count(std::string l, std::string regex) {
 
@@ -207,7 +144,7 @@ void parser::error(std::string errMsg) {
     std::cout << errMsg << std::endl;
 
 }
-vec parser::makeVectorTest(std::string l) {
+vec parser::makeVector(std::string l) {
 
 
     std::vector<std::string> args;
@@ -215,13 +152,14 @@ vec parser::makeVectorTest(std::string l) {
     l = l.substr(0,l.length()- 1);
 
     args = seperateArgs(l);
-
+    std::cout << "args" << std::endl;
     for(auto&& x: args)
     {
         std::cout << x << std::endl;
     }
     if(args.size() == 1)
     {
+        std::cout << "size == 1" << std::endl;
         return {makeDirVec(args[0]),{0,0,0}};
     }
     else
@@ -233,17 +171,20 @@ vec parser::makeVectorTest(std::string l) {
                 //parameter is a point
                 if(params.count("ptA") == 0)
                 {
+                    std::cout << "assigning ptA" << std::endl;
                     params["ptA"] = p;
                 }
                 else
                 {
+                    std::cout << "assigning ptB" << std::endl;
                     params["ptB"] = p;
                 }
 
             }
-            else if(p.find("dv{") == std::string::npos || dirVecs.count(p) ==1)
+            else if(p.find("dv{") != std::string::npos || dirVecs.count(p) ==1)
             {
                 //parameter is a dirVec
+                std::cout << "assiging dv" << std::endl;
                 params["dv"] = p;
             }
             else
@@ -279,13 +220,12 @@ vec parser::makeVectorTest(std::string l) {
 
 }
 std::string parser::replace(std::string newS, std::string oldS, std::string p) {
-    std::string replace(std::string newS, std::string oldS, std::string p)
-    {
+
         while(p.find(oldS) != std::string::npos)
         {
             p = p.substr(0,p.find(oldS)) + newS + p.substr(p.find(oldS) + 1);
         }
-    }
+    return p;
 }
 std::vector<std::string> parser::seperateArgs(std::string l) {
     std::vector<std::string> args;
@@ -322,5 +262,9 @@ std::vector<std::string> parser::seperateArgs(std::string l) {
         }
     }
     return args;
+}
+void parser::addDirVec(std::string line) {
+    std::string name = line.substr(0,line.find("=>"));
+    dirVecs[name] = makeDirVec(line);
 }
 

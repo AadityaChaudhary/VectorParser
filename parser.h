@@ -72,8 +72,8 @@ public:
 
     vec makeVector(std::string l);
     void addVector(std::string line);
-    vec makeVectorTest(std::string l);
-
+ //   vec makeVectorTest(std::string l);
+    void addDirVec(std::string line);
     dirVec makeDirVec(std::string line);
 
     int count(std::string l, std::string regex);
