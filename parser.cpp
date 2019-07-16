@@ -71,6 +71,7 @@ void parser::addPoint(std::string l) {
 }
 
 
+
 int parser::count(std::string l, std::string regex) {
 
     int x = 0;
@@ -266,5 +267,46 @@ std::vector<std::string> parser::seperateArgs(std::string l) {
 void parser::addDirVec(std::string line) {
     std::string name = line.substr(0,line.find("=>"));
     dirVecs[name] = makeDirVec(line);
+}
+
+bool parser::readLine(line l) {
+    currentLineVal = l.lineVal;
+    currentLineNum = l.lineNum;
+    std::string line = replace(""," ",l.lineVal);
+
+    if(line.find("=>"))
+    {
+        if(line.find("pn{"))
+        {
+            //addPlane(line);
+        }
+        else if(line.find("v{"))
+        {
+            addVector(line);
+        }
+        else if(line.find("pt{"))
+        {
+            addPoint(line);
+        }
+        else if(line.find("dv{"))
+        {
+            addDirVec(line);
+        }
+        else
+        {
+            //bruh sound effect #3
+            error("Constructor not recognized");
+        }
+
+    }
+    else
+    {
+        if(line.find("POI{"))
+        {
+            
+        }
+    }
+
+    return err;
 }
 

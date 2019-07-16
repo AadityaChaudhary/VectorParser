@@ -66,7 +66,7 @@ class parser {
 public:
     bool readLine(line l);
 
-
+private:
     point makePoint(std::string line);
     void addPoint(std::string l);
 
