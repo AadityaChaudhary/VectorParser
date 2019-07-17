@@ -49,6 +49,8 @@ struct plane{
     plane(vec b, vec c, point a);
     plane(vec a, point b);
 
+    void printInfo();
+
     point center;
     vec dir1;
     vec dir2;
@@ -80,6 +82,8 @@ private:
     void error(std::string errMsg);
     std::string replace(std::string newS,std::string oldS,std::string p);
     std::vector<std::string> seperateArgs(std::string l);
+
+    void displayAll();
 
     int currentLineNum;
     std::string currentLineVal;

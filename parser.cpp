@@ -301,12 +301,43 @@ bool parser::readLine(line l) {
     }
     else
     {
-        if(line.find("POI{"))
+        if(line.find("display"))
         {
-            
+            displayAll();
         }
     }
 
     return err;
+}
+void parser::displayAll() {
+    std::cout << "points: " << std::endl;
+    for( std::pair<std::string, point> e : points)
+    {
+        std::cout << "----------------------------------------" << std::endl;
+        std::cout << e.first << std::endl;
+        e.second.printInfo();
+    }
+    std::cout << "Direction Vectors: " << std::endl;
+    for( std::pair<std::string, dirVec> e : dirVecs)
+    {
+        std::cout << "----------------------------------------" << std::endl;
+        std::cout << e.first << std::endl;
+        e.second.printInfo();
+    }
+    std::cout << "Vectors: " << std::endl;
+    for( std::pair<std::string, vec> e : vecs)
+    {
+        std::cout << "----------------------------------------" << std::endl;
+        std::cout << e.first << std::endl;
+        e.second.printInfo();
+    }
+    std::cout << "planes: " << std::endl;
+    for( std::pair<std::string, plane> e : planes)
+    {
+        std::cout << "----------------------------------------" << std::endl;
+        std::cout << e.first << std::endl;
+        e.second.printInfo();
+    }
+
 }
 
